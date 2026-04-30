@@ -1,0 +1,32 @@
+{
+    "sw-settings-basic-information": {
+        "captcha": {
+            "label": {
+                "cloudflareTurnstile": "Cloudflare Turnstile",
+                "cloudflareTurnstileIntroduction": "Cloudflare Turnstile ist eine datenschutzfreundliche CAPTCHA-Alternative, die Benutzer automatisch verifiziert, ohne störende Rätsel zu zeigen.",
+                "cloudflareTurnstileSiteKey": "Site Key",
+                "cloudflareTurnstileSecretKey": "Secret Key",
+                "cloudflareTurnstileValidateCredentials": "API-Zugangsdaten überprüfen",
+                "cloudflareTurnstileWidgetMode": "Widget-Modus",
+                "cloudflareTurnstileWidgetModeManaged": "Managed (empfohlen)",
+                "cloudflareTurnstileWidgetModeNonInteractive": "Nicht-interaktiv",
+                "cloudflareTurnstileWidgetModeInvisible": "Unsichtbar",
+                "cloudflareTurnstileTheme": "Darstellung",
+                "cloudflareTurnstileThemeAuto": "Automatisch",
+                "cloudflareTurnstileThemeLight": "Hell",
+                "cloudflareTurnstileThemeDark": "Dunkel"
+            },
+            "notification": {
+                "turnstileValidCredentials": "Die API-Zugangsdaten sind gültig.",
+                "turnstileInvalidCredentials": "Die API-Zugangsdaten sind ungültig. Bitte überprüfen Sie Ihren Site Key und Secret Key.",
+                "turnstileErrorInCredentialsValidation": "Bei der Validierung der API-Zugangsdaten ist ein Fehler aufgetreten."
+            },
+            "help": {
+                "cloudflareTurnstileSiteKey": "Den Site Key finden Sie in Ihrem <a href=\"https://dash.cloudflare.com/?to=/:account/turnstile\" class=\"link\" rel=\"noopener\" target=\"_blank\">Cloudflare Dashboard</a> unter Turnstile.",
+                "cloudflareTurnstileSecretKey": "Den Secret Key finden Sie in Ihrem <a href=\"https://dash.cloudflare.com/?to=/:account/turnstile\" class=\"link\" rel=\"noopener\" target=\"_blank\">Cloudflare Dashboard</a> unter Turnstile.",
+                "cloudflareTurnstileWidgetMode": "\"Managed\" lässt Cloudflare entscheiden, ob eine Interaktion nötig ist. \"Nicht-interaktiv\" zeigt immer ein Widget ohne Interaktion. \"Unsichtbar\" zeigt kein sichtbares Widget."
+            }
+        }
+    }
+}
+

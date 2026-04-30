@@ -1,0 +1,32 @@
+{
+    "sw-settings-basic-information": {
+        "captcha": {
+            "label": {
+                "cloudflareTurnstile": "Cloudflare Turnstile",
+                "cloudflareTurnstileIntroduction": "Cloudflare Turnstile is a privacy-friendly CAPTCHA alternative that automatically verifies users without showing disruptive puzzles.",
+                "cloudflareTurnstileSiteKey": "Site Key",
+                "cloudflareTurnstileSecretKey": "Secret Key",
+                "cloudflareTurnstileValidateCredentials": "Validate API credentials",
+                "cloudflareTurnstileWidgetMode": "Widget mode",
+                "cloudflareTurnstileWidgetModeManaged": "Managed (recommended)",
+                "cloudflareTurnstileWidgetModeNonInteractive": "Non-interactive",
+                "cloudflareTurnstileWidgetModeInvisible": "Invisible",
+                "cloudflareTurnstileTheme": "Appearance",
+                "cloudflareTurnstileThemeAuto": "Automatic",
+                "cloudflareTurnstileThemeLight": "Light",
+                "cloudflareTurnstileThemeDark": "Dark"
+            },
+            "notification": {
+                "turnstileValidCredentials": "The API credentials are valid.",
+                "turnstileInvalidCredentials": "The API credentials are invalid. Please check your Site Key and Secret Key.",
+                "turnstileErrorInCredentialsValidation": "An error occurred while validating the API credentials."
+            },
+            "help": {
+                "cloudflareTurnstileSiteKey": "You can find the Site Key in your <a href=\"https://dash.cloudflare.com/?to=/:account/turnstile\" class=\"link\" rel=\"noopener\" target=\"_blank\">Cloudflare Dashboard</a> under Turnstile.",
+                "cloudflareTurnstileSecretKey": "You can find the Secret Key in your <a href=\"https://dash.cloudflare.com/?to=/:account/turnstile\" class=\"link\" rel=\"noopener\" target=\"_blank\">Cloudflare Dashboard</a> under Turnstile.",
+                "cloudflareTurnstileWidgetMode": "\"Managed\" lets Cloudflare decide whether user interaction is needed. \"Non-interactive\" always shows a widget without interaction. \"Invisible\" shows no visible widget."
+            }
+        }
+    }
+}
+

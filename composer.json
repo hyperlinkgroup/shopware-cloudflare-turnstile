@@ -1,0 +1,36 @@
+{
+  "name": "ssq/cloudflare-turnstile",
+  "description": "Cloudflare Turnstile CAPTCHA integration for Shopware 6.",
+  "license": "proprietary",
+  "type": "shopware-platform-plugin",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "SSQ",
+      "role": "Manufacturer"
+    }
+  ],
+  "require": {
+    "php": "^8.1",
+    "ext-json": "*",
+    "shopware/core": "~6.5.0",
+    "shopware/storefront": "~6.5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ssq\\CloudflareTurnstile\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "Ssq\\CloudflareTurnstile\\SsqCloudflareTurnstile",
+    "label": {
+      "de-DE": "Cloudflare Turnstile",
+      "en-GB": "Cloudflare Turnstile"
+    },
+    "description": {
+      "de-DE": "Integration der datenschutzfreundlichen CAPTCHA-Lösung Cloudflare Turnstile für Shopware 6.",
+      "en-GB": "Integration of the privacy-friendly Cloudflare Turnstile CAPTCHA solution for Shopware 6."
+    }
+  }
+}
+
