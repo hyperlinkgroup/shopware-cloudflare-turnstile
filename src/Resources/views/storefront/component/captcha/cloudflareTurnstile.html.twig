@@ -7,10 +7,14 @@
         {% set widgetMode = config('%s.config.widgetMode'|format(configNamespace)) | default('managed') %}
         {% set theme = config('%s.config.theme'|format(configNamespace)) | default('auto') %}
 
+        {% set turnstileViolationPath = "/#{constant('Ssq\\CloudflareTurnstile\\Storefront\\Framework\\Captcha\\CloudflareTurnstile::CAPTCHA_REQUEST_PARAMETER')}" %}
+        {% set hasTurnstileError = formViolations is defined and formViolations is not null and formViolations.getViolations(turnstileViolationPath) is not empty %}
+
         {% block component_cloudflare_turnstile_form_row %}
             <div class="form-row cloudflare-turnstile">
                 {% block component_cloudflare_turnstile_form_group %}
                     <div class="form-group {% if additionalClass %}{{ additionalClass }}{% else %}col-md-6{% endif %}">
+
                         {% block component_cloudflare_turnstile_widget %}
                             {# Cloudflare Turnstile JS – renders the widget automatically for elements with class cf-turnstile #}
                             <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
@@ -31,6 +35,15 @@
                             } %}
                         </noscript>
                     </div>
+                {% endblock %}
+
+                {% block component_cloudflare_turnstile_error %}
+                    {% if hasTurnstileError %}
+                        {% sw_include '@Storefront/storefront/utilities/alert.html.twig' with {
+                            type: 'danger',
+                            content: 'error.captcha.cloudflare-turnstile-invalid'|trans|sw_sanitize
+                        } %}
+                    {% endif %}
                 {% endblock %}
             </div>
         {% endblock %}
