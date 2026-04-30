@@ -7,11 +7,14 @@ namespace Ssq\CloudflareTurnstile\Storefront\Framework\Captcha;
 use Ssq\CloudflareTurnstile\Api\ClientInterface;
 use Shopware\Storefront\Framework\Captcha\AbstractCaptcha;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\ConstraintViolation;
+use Symfony\Component\Validator\ConstraintViolationList;
 
 class CloudflareTurnstile extends AbstractCaptcha
 {
     public const CAPTCHA_NAME = 'cloudflareTurnstile';
     public const CAPTCHA_REQUEST_PARAMETER = 'cf-turnstile-response';
+    public const INVALID_CAPTCHA_CODE = 'captcha.cloudflare-turnstile-invalid';
     private const CONFIG = 'config';
 
     private ClientInterface $client;
@@ -60,6 +63,34 @@ class CloudflareTurnstile extends AbstractCaptcha
     public function getName(): string
     {
         return self::CAPTCHA_NAME;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function shouldBreak(): bool
+    {
+        return false;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getViolations(): ConstraintViolationList
+    {
+        $violations = new ConstraintViolationList();
+        $violations->add(new ConstraintViolation(
+            '',
+            '',
+            [],
+            '',
+            '/' . self::CAPTCHA_REQUEST_PARAMETER,
+            '',
+            null,
+            self::INVALID_CAPTCHA_CODE
+        ));
+
+        return $violations;
     }
 
     private function isValidConfig(array $captchaConfig): bool

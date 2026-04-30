@@ -2,6 +2,11 @@
     "captcha": {
         "noscriptHeadline": "JavaScript erforderlich",
         "noscriptNotice": "Bitte aktivieren Sie JavaScript in Ihrem Browser, um das CAPTCHA zu laden."
+    },
+    "error": {
+        "captcha": {
+            "cloudflare-turnstile-invalid": "Wir konnten leider nicht bestätigen, dass Sie ein Mensch sind. Bitte versuchen Sie es erneut oder nutzen Sie ein anderes Gerät bzw. einen anderen Browser."
+        }
     }
 }
 
