@@ -13,7 +13,7 @@ interface ClientInterface
      *
      * @throws \JsonException
      */
-    public function isValidSolution(string $response, string $secretKey, ?string $remoteIp = null): bool;
+    public function isValidSolution(string $response, string $secretKey, ?string $remoteIp = null, bool $failOpen = true): bool;
 
     /**
      * Sends the verification request to Cloudflare and returns the decoded response.

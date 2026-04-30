@@ -62,6 +62,14 @@
             />
         {% endblock %}
 
+        {% block sw_settings_captcha_select_v2_cloudflare_turnstile_fail_open %}
+            <sw-checkbox-field
+                v-model="currentValue.cloudflareTurnstile.config.failOpen"
+                :label="$tc('sw-settings-basic-information.captcha.label.cloudflareTurnstileFailOpen')"
+                :help-text="$tc('sw-settings-basic-information.captcha.help.cloudflareTurnstileFailOpen')"
+            />
+        {% endblock %}
+
         {% block sw_settings_captcha_select_v2_cloudflare_turnstile_links %}
             <p class="sw-settings-captcha-select-v2__description">
                 <a href="https://developers.cloudflare.com/turnstile/"

@@ -14,7 +14,8 @@
                 "cloudflareTurnstileTheme": "Darstellung",
                 "cloudflareTurnstileThemeAuto": "Automatisch",
                 "cloudflareTurnstileThemeLight": "Hell",
-                "cloudflareTurnstileThemeDark": "Dunkel"
+                "cloudflareTurnstileThemeDark": "Dunkel",
+                "cloudflareTurnstileFailOpen": "Bei API-Ausfall Anfragen durchlassen (Fail-open)"
             },
             "notification": {
                 "turnstileValidCredentials": "Die API-Zugangsdaten sind gültig.",
@@ -24,7 +25,8 @@
             "help": {
                 "cloudflareTurnstileSiteKey": "Den Site Key finden Sie in Ihrem <a href=\"https://dash.cloudflare.com/?to=/:account/turnstile\" class=\"link\" rel=\"noopener\" target=\"_blank\">Cloudflare Dashboard</a> unter Turnstile.",
                 "cloudflareTurnstileSecretKey": "Den Secret Key finden Sie in Ihrem <a href=\"https://dash.cloudflare.com/?to=/:account/turnstile\" class=\"link\" rel=\"noopener\" target=\"_blank\">Cloudflare Dashboard</a> unter Turnstile.",
-                "cloudflareTurnstileWidgetMode": "\"Managed\" lässt Cloudflare entscheiden, ob eine Interaktion nötig ist. \"Nicht-interaktiv\" zeigt immer ein Widget ohne Interaktion. \"Unsichtbar\" zeigt kein sichtbares Widget."
+                "cloudflareTurnstileWidgetMode": "\"Managed\" lässt Cloudflare entscheiden, ob eine Interaktion nötig ist. \"Nicht-interaktiv\" zeigt immer ein Widget ohne Interaktion. \"Unsichtbar\" zeigt kein sichtbares Widget.",
+                "cloudflareTurnstileFailOpen": "Wenn aktiviert, werden Anfragen bei einem Ausfall der Cloudflare-API durchgelassen, damit der Shop weiter funktioniert. Wenn deaktiviert, werden Anfragen blockiert, bis die API wieder erreichbar ist."
             }
         }
     }

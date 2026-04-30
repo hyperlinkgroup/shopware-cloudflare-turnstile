@@ -14,7 +14,8 @@
                 "cloudflareTurnstileTheme": "Appearance",
                 "cloudflareTurnstileThemeAuto": "Automatic",
                 "cloudflareTurnstileThemeLight": "Light",
-                "cloudflareTurnstileThemeDark": "Dark"
+                "cloudflareTurnstileThemeDark": "Dark",
+                "cloudflareTurnstileFailOpen": "Allow requests on API failure (fail-open)"
             },
             "notification": {
                 "turnstileValidCredentials": "The API credentials are valid.",
@@ -24,7 +25,8 @@
             "help": {
                 "cloudflareTurnstileSiteKey": "You can find the Site Key in your <a href=\"https://dash.cloudflare.com/?to=/:account/turnstile\" class=\"link\" rel=\"noopener\" target=\"_blank\">Cloudflare Dashboard</a> under Turnstile.",
                 "cloudflareTurnstileSecretKey": "You can find the Secret Key in your <a href=\"https://dash.cloudflare.com/?to=/:account/turnstile\" class=\"link\" rel=\"noopener\" target=\"_blank\">Cloudflare Dashboard</a> under Turnstile.",
-                "cloudflareTurnstileWidgetMode": "\"Managed\" lets Cloudflare decide whether user interaction is needed. \"Non-interactive\" always shows a widget without interaction. \"Invisible\" shows no visible widget."
+                "cloudflareTurnstileWidgetMode": "\"Managed\" lets Cloudflare decide whether user interaction is needed. \"Non-interactive\" always shows a widget without interaction. \"Invisible\" shows no visible widget.",
+                "cloudflareTurnstileFailOpen": "When enabled, requests are allowed through if the Cloudflare API is unreachable, keeping your shop functional. When disabled, requests are blocked until the API is available again."
             }
         }
     }
