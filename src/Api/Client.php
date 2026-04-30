@@ -23,16 +23,16 @@ class Client implements ClientInterface
     /**
      * {@inheritdoc}
      */
-    public function isValidSolution(string $response, string $secretKey, ?string $remoteIp = null): bool
+    public function isValidSolution(string $response, string $secretKey, ?string $remoteIp = null, bool $failOpen = true): bool
     {
         try {
             $result = $this->getValidationResponse($response, $secretKey, $remoteIp);
 
             return (bool) ($result['success'] ?? false);
         } catch (ClientExceptionInterface $exception) {
-            // fail-open: if Cloudflare API is unreachable, let the request through
+            // if Cloudflare API is unreachable, behaviour depends on failOpen setting
             // @see https://developers.cloudflare.com/turnstile/get-started/server-side-validation/
-            return true;
+            return $failOpen;
         }
     }
 

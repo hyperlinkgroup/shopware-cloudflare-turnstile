@@ -50,10 +50,13 @@ class CloudflareTurnstile extends AbstractCaptcha
             return false;
         }
 
+        $failOpen = (bool) ($captchaConfig[self::CONFIG]['failOpen'] ?? true);
+
         return $this->client->isValidSolution(
             $turnstileResponse,
             $captchaConfig[self::CONFIG]['secretKey'],
-            $request->getClientIp()
+            $request->getClientIp(),
+            $failOpen
         );
     }
 
