@@ -1,0 +1,39 @@
+{% block component_captcha_cloudflare_turnstile %}
+    {% set configNamespace = constant('Ssq\\CloudflareTurnstile\\SsqCloudflareTurnstile::CONFIG_KEY') %}
+    {% set siteKey = config('%s.config.siteKey'|format(configNamespace)) %}
+    {% set secretKey = config('%s.config.secretKey'|format(configNamespace)) %}
+
+    {% if siteKey and secretKey %}
+        {% set widgetMode = config('%s.config.widgetMode'|format(configNamespace)) | default('managed') %}
+        {% set theme = config('%s.config.theme'|format(configNamespace)) | default('auto') %}
+
+        {% block component_cloudflare_turnstile_form_row %}
+            <div class="form-row cloudflare-turnstile">
+                {% block component_cloudflare_turnstile_form_group %}
+                    <div class="form-group {% if additionalClass %}{{ additionalClass }}{% else %}col-md-6{% endif %}">
+                        {% block component_cloudflare_turnstile_widget %}
+                            {# Cloudflare Turnstile JS – renders the widget automatically for elements with class cf-turnstile #}
+                            <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+                            <div
+                                class="cf-turnstile"
+                                data-sitekey="{{ siteKey }}"
+                                data-theme="{{ theme }}"
+                                data-appearance="{{ widgetMode }}"
+                            ></div>
+                        {% endblock %}
+
+                        <noscript>
+                            {% sw_include '@Storefront/storefront/utilities/alert.html.twig' with {
+                                type: 'warning',
+                                heading: 'captcha.noscriptHeadline'|trans|sw_sanitize,
+                                content: 'captcha.noscriptNotice'|trans|sw_sanitize
+                            } %}
+                        </noscript>
+                    </div>
+                {% endblock %}
+            </div>
+        {% endblock %}
+    {% endif %}
+{% endblock %}
+

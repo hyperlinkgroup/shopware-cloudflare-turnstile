@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <defaults autowire="true" autoconfigure="true"/>
+
+        <!-- API Client -->
+        <service id="Ssq\CloudflareTurnstile\Api\Client">
+            <argument type="service" id="shopware.captcha.client"/>
+        </service>
+
+        <service id="Ssq\CloudflareTurnstile\Api\ClientInterface" alias="Ssq\CloudflareTurnstile\Api\Client"/>
+
+        <!-- Config Management -->
+        <service id="Ssq\CloudflareTurnstile\Config\Manager"/>
+        <service id="Ssq\CloudflareTurnstile\Config\ManagerInterface"
+                 alias="Ssq\CloudflareTurnstile\Config\Manager"
+                 public="true"
+        />
+
+        <service id="Ssq\CloudflareTurnstile\Config\Patcher"/>
+        <service id="Ssq\CloudflareTurnstile\Config\PatcherInterface" alias="Ssq\CloudflareTurnstile\Config\Patcher"/>
+
+        <!-- Captcha Registration -->
+        <service id="Ssq\CloudflareTurnstile\Storefront\Framework\Captcha\CloudflareTurnstile">
+            <tag name="shopware.storefront.captcha" priority="400"/>
+        </service>
+
+        <!-- Admin API Controller -->
+        <service id="Ssq\CloudflareTurnstile\Controller\ApiCredentialsController">
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+        </service>
+    </services>
+</container>
+

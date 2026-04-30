@@ -1,0 +1,80 @@
+{% block sw_settings_captcha_select_v2_google_recaptcha_v2 %}
+    <sw-container
+        v-if="currentValue.cloudflareTurnstile && currentValue.cloudflareTurnstile.isActive"
+        class="sw-settings-captcha-select-v2__cloudflare-turnstile"
+    >
+        {% block sw_settings_captcha_select_v2__cloudflare_turnstile_headline %}
+            <h2>Cloudflare Turnstile</h2>
+        {% endblock %}
+
+        {% block sw_settings_captcha_select_v2__cloudflare_turnstile_description %}
+            <p class="sw-settings-captcha-select-v2__description">
+                {{ $tc('sw-settings-basic-information.captcha.label.cloudflareTurnstileIntroduction') }}
+            </p>
+        {% endblock %}
+
+        {% block sw_settings_captcha_select_v2_cloudflare_turnstile_site_key %}
+            <sw-text-field
+                v-model="currentValue.cloudflareTurnstile.config.siteKey"
+                name="cloudflareTurnstileSiteKey"
+                :label="$tc('sw-settings-basic-information.captcha.label.cloudflareTurnstileSiteKey')"
+                :help-text="$tc('sw-settings-basic-information.captcha.help.cloudflareTurnstileSiteKey')"
+                copyable
+            />
+        {% endblock %}
+
+        {% block sw_settings_captcha_select_v2_cloudflare_turnstile_secret_key %}
+            <sw-text-field
+                v-model="currentValue.cloudflareTurnstile.config.secretKey"
+                name="cloudflareTurnstileSecretKey"
+                :label="$tc('sw-settings-basic-information.captcha.label.cloudflareTurnstileSecretKey')"
+                :help-text="$tc('sw-settings-basic-information.captcha.help.cloudflareTurnstileSecretKey')"
+                copyable
+            />
+        {% endblock %}
+
+        {% block sw_settings_captcha_select_v2_cloudflare_turnstile_credentials_test %}
+            <sw-button-process
+                class="sw-field"
+                v-model="turnstileCredentialsValid"
+                :isLoading="turnstileIsValidatingCredentials"
+                :disabled="!turnstileHasKeys()"
+                @click="validateTurnstileApiCredentials"
+            >
+                {{ $tc('sw-settings-basic-information.captcha.label.cloudflareTurnstileValidateCredentials') }}
+            </sw-button-process>
+        {% endblock %}
+
+        {% block sw_settings_captcha_select_v2_cloudflare_turnstile_widget_mode %}
+            <sw-single-select
+                v-model="currentValue.cloudflareTurnstile.config.widgetMode"
+                :options="turnstileWidgetModeOptions"
+                :label="$tc('sw-settings-basic-information.captcha.label.cloudflareTurnstileWidgetMode')"
+                :help-text="$tc('sw-settings-basic-information.captcha.help.cloudflareTurnstileWidgetMode')"
+            />
+        {% endblock %}
+
+        {% block sw_settings_captcha_select_v2_cloudflare_turnstile_theme %}
+            <sw-single-select
+                v-model="currentValue.cloudflareTurnstile.config.theme"
+                :options="turnstileThemeOptions"
+                :label="$tc('sw-settings-basic-information.captcha.label.cloudflareTurnstileTheme')"
+            />
+        {% endblock %}
+
+        {% block sw_settings_captcha_select_v2_cloudflare_turnstile_links %}
+            <p class="sw-settings-captcha-select-v2__description">
+                <a href="https://developers.cloudflare.com/turnstile/"
+                   class="link"
+                   rel="noopener"
+                   target="_blank"
+                >
+                    Cloudflare Turnstile Dokumentation
+                </a>
+            </p>
+        {% endblock %}
+    </sw-container>
+
+    {% parent %}
+{% endblock %}
+
