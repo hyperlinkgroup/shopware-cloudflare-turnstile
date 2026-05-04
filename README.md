@@ -1,5 +1,9 @@
 # SsqCloudflareTurnstile – Cloudflare Turnstile für Shopware 6
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/hyperlink/cloudflare-turnstile.svg)](https://packagist.org/packages/hyperlink/cloudflare-turnstile)
+[![Shopware 6.5](https://img.shields.io/badge/Shopware-6.5.x-189EFF.svg)](https://www.shopware.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Integriert [Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/) als datenschutzfreundliche CAPTCHA-Lösung in Shopware 6.
 
 ---
@@ -26,12 +30,21 @@ Integriert [Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/
 
 ## Installation
 
-### Variante 1: Installation via Composer (empfohlen für Entwickler)
+### Variante 1: Installation via Composer (empfohlen)
 
-1. **Plugin in den Plugin-Ordner kopieren:**
+```bash
+composer require hyperlink/cloudflare-turnstile
+bin/console plugin:refresh
+bin/console plugin:install --activate SsqCloudflareTurnstile
+bin/console cache:clear
+```
+
+### Variante 2: Manuell in den Plugin-Ordner kopieren
+
+1. **Repository klonen oder herunterladen:**
 
    ```bash
-   cp -r SsqCloudflareTurnstile/ <shopware-root>/custom/plugins/SsqCloudflareTurnstile
+   git clone git@github.com:hyperlink/cloudflare-turnstile.git custom/plugins/SsqCloudflareTurnstile
    ```
 
 2. **Plugin erkennen, installieren und aktivieren:**
@@ -48,7 +61,7 @@ Integriert [Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/
    bin/console assets:install
    ```
 
-### Variante 2: Installation via ZIP-Upload im Admin-Panel
+### Variante 3: Installation via ZIP-Upload im Admin-Panel
 
 1. **ZIP-Datei erstellen** (falls noch nicht vorhanden):
 
@@ -58,6 +71,8 @@ Integriert [Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/
      -x "SsqCloudflareTurnstile/.git/*" \
      -x "SsqCloudflareTurnstile/vendor/*"
    ```
+
+   Alternativ: Den neuesten Release als ZIP von der [Releases-Seite](https://github.com/hyperlink/cloudflare-turnstile/releases) herunterladen.
 
 2. **Im Admin-Panel hochladen:**
    - Navigiere zu **Erweiterungen → Meine Erweiterungen**
@@ -119,7 +134,12 @@ Bei der Deinstallation werden alle gespeicherten Konfigurationsdaten (inkl. Secr
 
 ---
 
+## Mitwirken
+
+Beiträge sind willkommen! Alle Details findest du in der [CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
+
 ## Lizenz
 
-Proprietär
-
+Dieses Projekt ist lizenziert unter der [MIT-Lizenz](LICENSE).

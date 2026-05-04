@@ -1,12 +1,12 @@
 {
-  "name": "ssq/cloudflare-turnstile",
+  "name": "hyperlink/cloudflare-turnstile",
   "description": "Cloudflare Turnstile CAPTCHA integration for Shopware 6.",
-  "license": "proprietary",
+  "license": "MIT",
   "type": "shopware-platform-plugin",
   "version": "1.0.0",
   "authors": [
     {
-      "name": "SSQ",
+      "name": "HYPERLINK Group",
       "role": "Manufacturer"
     }
   ],
